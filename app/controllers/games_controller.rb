@@ -3,15 +3,8 @@ require 'json'
 
 class GamesController < ApplicationController
   def new
-    # session.delete("total_score")
     p session[:total_score] = 0 if !session.has_key?("total_score")
     p @total = session[:total_score]
-    # p session[:new_game] = false
-    # p session[:new_game] = true if session[:new_game]
-    # if session[:new_game]
-    #   p session[:total_score] = 0
-    #   p session[:new_game] = false
-    # end
     @letters = []
     10.times { @letters << ('A'..'Z').to_a.sample }
   end
